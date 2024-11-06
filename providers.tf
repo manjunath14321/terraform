@@ -1,9 +1,13 @@
 terraform {
   required_providers {
-    random = {
-      source = "hashicorp/random"
-      version = "3.6.3"
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "3.0.2"
     }
   }
+}
+# Add the Docker provider block
+provider "docker" {
+  host = "unix:///var/run/docker.sock"
 }
 
